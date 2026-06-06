@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nubank/models/carteira.dart';
 import 'package:nubank/models/usuario.dart';
+import 'package:nubank/wigtes/cardPersonalizado.dart';
 
 class Secundaria extends StatefulWidget {
   const Secundaria({super.key});
@@ -70,9 +71,9 @@ class _SecundariaState extends State<Secundaria> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsetsGeometry.fromLTRB(16, 16, 16, 0),
+      body: Padding(
+        padding: const EdgeInsetsGeometry.fromLTRB(16, 16, 16, 0),
+        child: SingleChildScrollView(
           child: Column(
             children: [
               Row(
@@ -376,6 +377,131 @@ class _SecundariaState extends State<Secundaria> {
                     ),
                   ),
                 ],
+              ),
+              SizedBox(height: 24),
+              SingleChildScrollView(
+                scrollDirection: .horizontal,
+                child: Row(
+                  spacing: 20,
+                  mainAxisAlignment: .start,
+                  children: [
+                    CardPersonalizado(
+                      Text.rich(
+                        TextSpan(
+                          style: TextStyle(fontSize: 12),
+                          children: [
+                            TextSpan(text: "Você tem até "),
+                            TextSpan(
+                              text: "R\$ 12.500,00 ",
+                              style: TextStyle(
+                                color: Color(0xFF830AD1),
+                                fontSize: 12,
+                              ),
+                            ),
+                            TextSpan(text: "diponíveis para empréstimo."),
+                          ],
+                        ),
+                      ),
+                    ),
+                    CardPersonalizado(
+                      Text.rich(
+                        TextSpan(
+                          style: TextStyle(fontSize: 12),
+                          children: [
+                            TextSpan(text: "Salve seus amigos da burocracia. "),
+                            TextSpan(
+                              text: "Faça um convite...",
+                              style: TextStyle(
+                                color: Color(0xFF830AD1),
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 24),
+              Divider(),
+              Padding(
+                padding: .all(16),
+                child: Container(
+                  height: 162,
+                  width: 360,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: .spaceBetween,
+                        children: [
+                          Text(
+                            "Cartão de crédito",
+                            style: TextStyle(fontSize: 14, fontWeight: .w600),
+                          ),
+                          Icon(Icons.arrow_forward_ios),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Text(
+                            "Fatura atual",
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: .w600,
+                              color: Color(0xFF848389),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 4),
+                      Row(
+                        children: [
+                          Text("R\$ "),
+                          Text(
+                            "250,00",
+                            style: TextStyle(fontSize: 16, fontWeight: .w600),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "Limite disponível de R\$ ",
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Color(0xFF848389),
+                            ),
+                          ),
+                          Text(
+                            "3.455,55",
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Color(0xFF848389),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 25),
+                      Row(
+                        mainAxisAlignment:  MainAxisAlignment.start,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () => {},
+                            child: Text(
+                              "Parcelar compras ",
+                              style: TextStyle(
+                                fontWeight: .bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
