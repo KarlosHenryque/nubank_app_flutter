@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:nubank/models/carteira.dart';
 
 class Usuario {
