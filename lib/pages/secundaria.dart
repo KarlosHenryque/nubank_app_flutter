@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nubank/models/carteira.dart';
 import 'package:nubank/models/usuario.dart';
+import 'package:nubank/wigtes/cardDescubraMais.dart';
 import 'package:nubank/wigtes/cardPersonalizado.dart';
+import 'package:nubank/wigtes/cardSeguro.dart';
 
 class Secundaria extends StatefulWidget {
   const Secundaria({super.key});
@@ -485,7 +486,7 @@ class _SecundariaState extends State<Secundaria> {
                       ),
                       SizedBox(height: 25),
                       Row(
-                        mainAxisAlignment:  MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           ElevatedButton(
                             onPressed: () => {},
@@ -503,6 +504,166 @@ class _SecundariaState extends State<Secundaria> {
                   ),
                 ),
               ),
+              Divider(),
+              Padding(
+                padding: .all(16),
+                child: Container(
+                  width: 360,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: .spaceBetween,
+                        children: [
+                          Text(
+                            "Empréstimo",
+                            style: TextStyle(fontSize: 14, fontWeight: .w600),
+                          ),
+                          Icon(Icons.arrow_forward_ios),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Text(
+                            "Valor disponível de até \nR\$ 25.000,00",
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: .w600,
+                              color: Color(0xFF848389),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Divider(),
+              Padding(
+                padding: .all(16),
+                child: Container(
+                  width: 360,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: .spaceBetween,
+                        children: [
+                          Text(
+                            "Investimentos",
+                            style: TextStyle(fontSize: 14, fontWeight: .w600),
+                          ),
+                          Icon(Icons.arrow_forward_ios),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              "Limite disponível de R\$ 3.455,55",
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: Color(0xFF848389),
+                                fontWeight: .w600,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Divider(),
+              Padding(
+                padding: EdgeInsets.all(16),
+                child: Container(
+                  width: double.infinity,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Seguros",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "Proteção para você cuidar do que importa",
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Color(0xFF848389),
+                          fontWeight: .w600,
+                        ),
+                      ),
+                      SizedBox(height: 24),
+
+                      CardSeguro(Icons.favorite, 'Seguro vida', 'Conhecer'),
+
+                      SizedBox(height: 24),
+
+                      CardSeguro(
+                        Icons.smartphone,
+                        'Seguro celular',
+                        'Conhecer',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Divider(),
+              Padding(
+                padding: .all(16),
+                child: Container(
+                  width: 360,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: .spaceBetween,
+                        children: [
+                          Text(
+                            "Shopping",
+                            style: TextStyle(fontSize: 14, fontWeight: .w600),
+                          ),
+                          Icon(Icons.arrow_forward_ios),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              "Vantagens exclusivas das nossas marcas preferidas",
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: Color(0xFF848389),
+                                fontWeight: .w600,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Divider(),
+              SizedBox(height: 24),
+              SingleChildScrollView(
+                scrollDirection: .horizontal,
+                child: Row(
+                  spacing: 10,
+                  children: [
+                    CardDescubraMais('assets/images/descubra1.png', 'Parcele compras no app', 'Descontos em compras à vista \n no crédito, controle total sobr...', 'Conhecer'),
+                    CardDescubraMais('assets/images/descubra2.png', 'Portabilidade de salário', 'Sua liberdade financeira \ncomeça com você escolhend..., controle total sobr...', 'Conhecer'),
+                    CardDescubraMais('assets/images/descubra4.png', 'Indique seus amigos', 'Mostre aos seus amigos como é \nfácil ter uma vida sem ... ', 'Indicar amigos'),
+                    CardDescubraMais('assets/images/descubra3.png', 'WhatsApp', 'Pagamentos seguros, rápidos e \nsem tarifa. A experiência ...', 'Quero conhecer'),
+                  ],
+                ),
+              ),
+              SizedBox(height: 24),
             ],
           ),
         ),
