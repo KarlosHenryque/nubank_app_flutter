@@ -63,6 +63,10 @@ flutter:
     - assets/images/icone.png
     - assets/images/nubank.png
     - assets/images/Ellipse.png
+    - assets/images/descubra1.png
+    - assets/images/descubra2.png
+    - assets/images/descubra3.png
+    - assets/images/descubra4.png
     - assets/images/iconepagar.png
     - assets/images/iconeajuda.png
     - assets/images/iconecobrar.png
